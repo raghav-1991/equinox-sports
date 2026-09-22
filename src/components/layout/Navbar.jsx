@@ -87,9 +87,9 @@ export default function Navbar() {
             <Link to="/" className="nav__logo" aria-label={company.name}>
               {logoOk ? (
                 <img
-                  src={isHome ? img(company.logo) : img(NAV_LOGO_BLUE)}
+                  src={transparent ? img(company.logo) : img(NAV_LOGO_BLUE)}
                   alt={company.name}
-                  className={isHome ? "" : "nav__logo-img--blue"}
+                  className={transparent ? "" : "nav__logo-img--blue"}
                   onError={() => setLogoOk(false)}
                 />
               ) : (
@@ -139,7 +139,13 @@ export default function Navbar() {
       <div className={`scrim ${open ? "is-open" : ""}`} onClick={() => setOpen(false)} />
       <aside className={`mobile-menu ${open ? "is-open" : ""}`} aria-hidden={!open}>
         <div className="mobile-menu__head">
-          <Link to="/" className="nav__logo"><LogoText /></Link>
+          <Link to="/" className="nav__logo">
+            {logoOk ? (
+              <img src={img(company.logo)} alt={company.name} onError={() => setLogoOk(false)} />
+            ) : (
+              <LogoText />
+            )}
+          </Link>
           <button className="mobile-menu__close" onClick={() => setOpen(false)} aria-label="Close menu">&times;</button>
         </div>
 
