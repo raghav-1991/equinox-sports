@@ -12,7 +12,7 @@ export const company = {
     "https://api.whatsapp.com/send?phone=919986306767&text=Hi, I'd like to know more about Equinox Sports Infra",
   logo: "/assets/img/logo.png",
   logoWhite: "/assets/img/logo/white.png",
-  copyrightYear: 2021,
+  copyrightYear: 2026,
   social: [
     { label: "Facebook", href: "#" },
     { label: "Instagram", href: "#" },
